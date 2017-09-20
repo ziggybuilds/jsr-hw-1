@@ -1,0 +1,41 @@
+<div class="startup-name">
+  <p id="name"></p>
+</div>
+
+<script type="text/javascript">
+	// Part 1 & 2
+	var brands = ["Coke", "Pepsi", "Honest Tea", "Smart Water", "Dasani"];
+    var animals = ["Cheetas", "Ants", "Cats", "Hippos", "Doggies"];
+
+    // Part 3
+    function publishConsole(arrayOne, arrayTwo) {
+    	for(i = 0; i < arrayOne.length; i++) {
+    		console.log('What is this? A ' + arrayOne[i] + ' for ' + arrayTwo[i] + '!');
+    	}
+    }
+   	//publishConsole(brands, animals);
+
+
+    // Bonus, Randomize arrays
+   	function randomizer(array) {
+	    array.sort(function(a, b){
+	    	return 0.5 - Math.random();
+	    });
+	    return array;
+	}
+
+	//publishConsole(randomizer(brands), randomizer(animals));
+
+	// Bonus render content
+	function publishHTML(arrayOne, arrayTwo) {
+    	for(i = 0; i < arrayOne.length; i++) {
+    		var node = document.createElement('P');
+    		var innerText = document.createTextNode('What is this? A ' + arrayOne[i] + ' for ' + arrayTwo[i] + '!');
+    		node.appendChild(innerText);
+    		document.getElementById('name').appendChild(node);
+    	}
+    }
+
+    publishHTML(randomizer(brands), randomizer(animals));
+
+</script>
